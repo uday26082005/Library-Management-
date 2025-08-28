@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Library</title>
+  <link rel="stylesheet" href="library.css">
+</head>
+<body>
+ 
+<header>
+  <h1>Student Library System</h1>
+  <p>India | studentlib@gmail.com | +91-8800991010</p>
+</header>
+
+<nav>
+  <button onclick="showSection('issue')">Issue Book</button>
+  <button onclick="showSection('return')">Return Book</button>
+  <button onclick="showSection('students')">Student Details</button>
+  <button onclick="showSection('books')">Available Books</button>
+</nav>
+
+<div class="container">
+
+  <!-- Issue Book Section -->
+  <div id="issue" class="card">
+    <h2>Issue a Book</h2>
+    <form onsubmit="issueBook(event)">
+      <label>Student Name:</label>
+      <input type="text" id="studentName" required>
+      <label>Email:</label>
+      <input type="email" id="studentEmail" required>
+      <label>Select Book:</label>
+      <select id="bookSelect" required></select>
+      <button type="submit" class="btn">Issue Book</button>
+    </form>
+  </div>
+
+  <!-- Return Book Section -->
+  <div id="return" class="card">
+    <h2>Return a Book</h2>
+    <form onsubmit="returnBook(event)">
+      <label>Enter Book ID:</label>
+      <input type="number" id="returnId" required>
+      <button type="submit" class="btn">Return Book</button>
+    </form>
+  </div>
+
+  <!-- Student Details Section -->
+  <div id="students" class="card">
+    <h2>Student Details</h2>
+    <table id="studentTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Book</th>
+          <th>Book ID</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- Available Books Section -->
+  <div id="books" class="card">
+    <h2>Available Books</h2>
+    <table id="bookTable">
+      <thead>
+        <tr>
+          <th>Book Title</th>
+          <th>Author</th>
+          <th>ID</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+</div>
+
+<script src="library.js"></script>
+</body>
+</html>
